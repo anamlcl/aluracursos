@@ -1,0 +1,103 @@
+header {
+	background: cadetblue;
+	padding: 20px 0;
+}
+
+.caixa {
+	position: relative;
+	width: 940px;
+	margin: 0 auto;
+}
+
+nav {
+	position: absolute;
+	top: 110px;
+	right: 0;
+}
+
+nav li {
+	display: inline;
+	margin: 0 0 0 15px;
+}
+
+nav a {
+	text-transform: uppercase;
+	color: #000000;
+	font-weight: bold;
+	font-size: 22px;
+	text-decoration: none;
+}
+
+nav a:hover {
+	color: #fff;
+}
+
+main {
+    width: 940px;
+    margin: 0 auto;
+}
+
+form {
+    margin: 40px 0;
+}
+
+form label,
+form legend {
+    display: block;
+    font-size: 20px;
+    margin: 0 0 10px;
+}
+
+.input-padrao {
+    display: block;
+    margin: 0 0 10px;
+    padding: 12px 25px;
+    width: 40%;
+}
+
+.checkbox {
+    margin: 30px 0;
+}
+
+#submit {
+	color: #fff;
+	text-transform: uppercase;
+    font-size: 18px;
+	width: 15%;
+    padding: 12px 0;
+	margin-top: 20px;
+	border-radius: 10px;
+	border-style: none;
+	background-color: cadetblue;
+	transition: 1s all;
+	cursor: pointer;
+}
+
+#submit:hover {
+	background-color: #3b7a7c;
+	transform: scale(1.1);
+}
+
+table {
+	margin: 20px 0 40px;
+}
+
+thead {
+	background-color: #616060;
+	color: #fff;
+	font-weight: bold;
+}
+
+td, th {
+	border: 1px solid #000;
+	padding: 15px 25px;
+	text-align: center;
+	font-size: 18px;
+}
+
+footer {
+	text-align: center;
+	background: url("bg.jpg");
+	padding: 30px 0;
+	color: #fff;
+}
