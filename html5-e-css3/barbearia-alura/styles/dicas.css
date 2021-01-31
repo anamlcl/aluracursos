@@ -1,0 +1,32 @@
+/* 
+seleciona todas as tags 'p' que são filhas diretas da 'main': 
+
+main > p {
+	background: red;
+} 
+
+seleciona a primeira ou próxima tag 'p' irmã da 'img':
+
+img + p {
+	background: blue;
+}
+
+seleciona todas as tags 'p' após a 'img':
+
+img ~ p {
+	background: yellow;
+}
+
+seleciona todas as tags 'p' exceto a que possue o id="missao":
+
+.main-section p:not(#missao) {
+	background: orange;
+}
+
+calcular o tamanho ideal para um determinado elemento aparecer na tela:
+
+img {
+	width: calc(33% - 10px) ou calc( (100% / 3) - 10px);
+} 
+
+*/

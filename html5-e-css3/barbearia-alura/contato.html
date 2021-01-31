@@ -2,15 +2,17 @@
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="reset.css" />
-    <link rel="stylesheet" href="contato.css" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/contato.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <title>Contato - Barbearia Alura</title>
   </head>
   <body>
     <header>
       <div class="caixa">
-        <h1><img src="logo.png" alt="Logo da Barbearia Alura" /></h1>
+        <h1><img src="./assets/logo.png" alt="Logo da Barbearia Alura" /></h1>
 
         <nav>
           <ul>
@@ -79,30 +81,27 @@
 
         <fieldset>
           <legend>Selecione o horário de atendimento</legend>
-          <select name="" id="">
-            <option value="">9:00</option>
-            <option value="">9:30</option>
-            <option value="">10:00</option>
-            <option value="">10:30</option>
-            <option value="">11:00</option>
-            <option value="">11:30</option>
-            <option value="">14:00</option>
-            <option value="">14:30</option>
-            <option value="">15:00</option>
-            <option value="">15:30</option>
-            <option value="">16:00</option>
-            <option value="">16:30</option>
-            <option value="">17:00</option>
-            <option value="">17:30</option>
+          <select>
+            <option>9:00</option>
+            <option>9:30</option>
+            <option>10:00</option>
+            <option>10:30</option>
+            <option>11:00</option>
+            <option>11:30</option>
+            <option>14:00</option>
+            <option>14:30</option>
+            <option>15:00</option>
+            <option>15:30</option>
+            <option>16:00</option>
+            <option>16:30</option>
+            <option>17:00</option>
+            <option>17:30</option>
           </select>
         </fieldset>
 
-        <label class="checkbox"
-          ><input type="checkbox" checked /> Quero receber as novidades por
-          e-mail.</label
-        >
-
+        <label class="checkbox"><input type="checkbox" checked /> Quero receber as novidades por e-mail.</label>
         <input type="submit" id="submit" />
+
       </form>
 
       <table>
@@ -123,7 +122,7 @@
     </main>
 
     <footer>
-      <img src="logo-branco.png" alt="Logo da Barbearia Alura" />
+      <img src="./assets/logo-branco.png" alt="Logo da Barbearia Alura" />
       <p>Barbearia Alura &copy; 2021</p>
     </footer>
   </body>

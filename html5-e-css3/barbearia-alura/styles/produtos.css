@@ -1,3 +1,7 @@
+body {
+	font-family: 'Roboto Slab', serif;
+}
+
 header {
 	background: cadetblue;
 	padding: 20px 0;
@@ -73,7 +77,38 @@ nav a:hover {
 footer {
 	text-align: center;
 	margin-top: 6em;
-	background: url("bg.jpg");
+	background: url("../assets/bg.jpg");
 	padding: 30px 0;
 	color: #fff;
+}
+
+@media screen and (max-width: 480px) {
+	.caixa, .produtos, .produtos li {
+		width: auto
+	}
+
+	.produtos, .produtos li {
+		display: block;
+	}
+
+	.produtos li {
+		margin: 0 2em 2em;
+	}
+
+	h1 {
+		text-align: center;
+	}
+
+	nav {
+		position: static;
+		text-align: center;
+		margin-top: 2em;
+	}
+
+	footer {
+		padding-bottom: 3em;
+	}
+
+	
+
 }

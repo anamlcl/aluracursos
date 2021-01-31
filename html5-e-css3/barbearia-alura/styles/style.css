@@ -1,0 +1,218 @@
+body {
+	font-family: 'Roboto Slab', serif;
+}
+
+header {
+	background: cadetblue;
+	padding: 20px 0;
+}
+
+.caixa {
+	position: relative;
+	width: 940px;
+	margin: 0 auto;
+}
+
+nav {
+	position: absolute;
+	top: 110px;
+	right: 0;
+}
+
+nav li {
+	display: inline;
+	margin: 0 0 0 15px;
+}
+
+nav a {
+	text-transform: uppercase;
+	color: #000000;
+	font-weight: bold;
+	font-size: 22px;
+	text-decoration: none;
+}
+
+nav a:hover {
+	color: #fff;
+}
+
+.banner {
+	width: 100%;
+}
+
+.main-title {
+	text-align: center;
+	font-size: 2em;
+	margin: 1em 0;
+	clear: left; /* o elemento foi movido para baixo para limpar os últimos flutuantes da esquerda. */
+	/* color: rgba(0, 0, 0, 0.3); adiciona opacidade na cor do texto através da camada alfa 'a'
+	text-shadow: 2px 2px #ff0000; adiciona sombra ao texto */
+
+}
+
+/* adiciona um determinado conteúdo no começo e no final da classe selecionada
+
+.main-title:before {
+	content: "[ ";
+}
+
+.main-title:after {
+	content: " ]"
+}
+
+seleciona a primeira letra
+
+.main-title::first-letter {
+	font-weight: bold;
+} */
+
+.utensilios {
+	width: 150px;
+	float: left;
+	margin: 0 20px 20px 0;
+}
+
+.main-section {
+	padding: 2em 0;
+	background: #fefefe;
+	width: 940px;
+	margin: 0 auto;
+}
+
+.main-section p {
+	margin: 0 0 1em;
+	line-height: 1.75em;
+}
+
+.main-section strong {
+	font-weight: bold;
+}
+
+.main-section em {
+	font-style: italic;
+}
+
+.benefits {
+	padding: 2em 0;
+	background: cadetblue;
+}
+
+/* adicionar sombra interna ao elemento
+
+.benefits {
+	box-shadow: inset 0 0 30px #ff0000
+}
+
+*/
+
+.benefits-content {
+	width: 640px;
+	margin: 0 auto;
+}
+
+.benefits-list {
+	width: 40%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.itens {
+	line-height: 2em;
+}
+
+/* adiciona uma propriedade e valor ao primeiro filho da classe selecionada */
+.itens:first-child {
+	font-weight: bold;
+}
+
+/* adiciona um determinado conteúdo antes do elemento */
+.itens:before {
+	content: "✪";
+}
+
+/* adicionando opacidade a imagem (o valor vai de 0 a 1);
+   adicionando sombra a imagem; pode add várias sombras e opacidade a essas sombras também no mesmo elemento. */
+.img-benefits {
+	width: 60%;
+	opacity: 0.9;
+	transition: 400ms;
+	box-shadow: 10px 10px 10px 0 #000000; /* (valores: X, Y, blur, expansão) */
+}
+
+/* sem opacidade quando passar o mouse por cima da imagem */
+.img-benefits:hover {
+	opacity: 1;
+}
+
+.map {
+	padding: 2em 0;
+	background: linear-gradient(#fefefe, cadetblue);
+}
+
+.map p {
+	margin: 0 0 2em;
+	text-align: center;
+}
+
+.map-content {
+	width: 940px;
+	margin: 0 auto;
+}
+.video {
+	width: 560px;
+	margin: 2em auto;
+}
+
+footer {
+	text-align: center;
+	background: url("../assets/bg.jpg");
+	padding: 30px 0;
+	color: #fff;
+}
+
+@media screen and (max-width: 480px) {
+	.caixa, .main-section, .benefits-content, .map-content {
+		width: auto
+	}
+
+	h1 {
+		text-align: center;
+	}
+
+	nav {
+		position: static;
+		text-align: center;
+		margin-top: 2em;
+	}
+
+	.main-section {
+		margin: 0 0.6em;
+	}
+
+	.video, .img-benefits {
+		width: 350px;
+	}
+
+	.img-benefits {
+		margin-left: 0.7em;
+	}
+
+	.benefits-list {
+		width: 100%;
+	}
+
+	.benefits-list {
+		text-align: center;
+		margin-bottom: 2em;
+	}
+
+	footer {
+		padding-bottom: 3em;
+	}
+
+}
+
+
+
+
+
