@@ -129,6 +129,15 @@ button[disabled=disabled], button:disabled {
     margin-top: 30px;
 }
 
-.campo-invalido{
+/* .campo-invalido{
 	border: 1px solid red;
+} */
+
+.dado-invalido {
+	background-color: lightcoral;
+}
+
+.imc-invalido {
+	color: red;
+	font-weight: bold;
 }

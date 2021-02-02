@@ -3,39 +3,58 @@ const title = document.querySelector('.titulo')
 title.textContent = 'Aparecida Nutricionista'
 
 // buscando dados do primeiro paciente da tabela
-const paciente = document.querySelector('#primeiro-paciente')
+// const paciente = document.querySelector('#primeiro-paciente')
 
-const tdNome = paciente.querySelector('.info-nome')
-const nome = tdNome.textContent
+// buscando dados de todos os pacientes da tabela
+const pacientes = document.querySelectorAll('.paciente')
 
-const tdPeso = paciente.querySelector('.info-peso')
-const peso = tdPeso.textContent
+for (let i = 0; i < pacientes.length; i++) {
 
-const tdAltura = paciente.querySelector('.info-altura')
-const altura = tdAltura.textContent
+    const paciente = pacientes[i]
 
-const tdImc =  paciente.querySelector('.info-imc')
+    console.log(paciente)
 
-let pesoValido = true;
-let alturaValida = true;
+    // const tdNome = paciente.querySelector('.info-nome')
+    // const nome = tdNome.textContent
 
-if (peso <= 0 || peso >= 1000) {
-    pesoValido = false;
-    tdImc.textContent = 'Peso inválido!'
-    tdImc.style.color = 'red'
-    tdImc.style.fontWeight = 'bold'
+    const tdPeso = paciente.querySelector('.info-peso')
+    const peso = tdPeso.textContent
 
-}
+    const tdAltura = paciente.querySelector('.info-altura')
+    const altura = tdAltura.textContent
 
-if (altura <= 0 || altura >= 3.00) {
-    alturaValida = false;
-    tdImc.textContent = 'Altura inválida!'
-    tdImc.style.color = 'red'
-    tdImc.style.fontWeight = 'bold'
-}
+    const tdImc = paciente.querySelector('.info-imc')
 
-if (pesoValido && alturaValida) {
-    const imc = peso / (altura * altura)
-    tdImc.textContent = imc
-    tdImc.style.fontWeight = 'bold'
+    let pesoValido = true;
+    let alturaValida = true;
+
+    if (peso <= 0 || peso >= 1000) {
+        pesoValido = false;
+        // tdPeso.style.backgroundColor = 'lightcoral'
+        // tdPeso.style.fontWeight = 'bold'
+        tdPeso.classList.add('dado-invalido') // prática mais correta de add CSS
+        tdImc.textContent = 'Peso inválido!'
+        tdImc.classList.add('imc-invalido')
+        // tdImc.style.color = 'red'
+        // tdImc.style.fontWeight = 'bold'
+
+    }
+
+    if (altura <= 0 || altura >= 3.00) {
+        alturaValida = false;
+        // tdAltura.style.backgroundColor = 'lightcoral'
+        // tdAltura.style.fontWeight = 'bold'
+        tdAltura.classList.add('dado-invalido')
+        tdImc.textContent = 'Altura inválida!'
+        tdImc.classList.add('imc-invalido')
+        // tdImc.style.color = 'red'
+        // tdImc.style.fontWeight = 'bold'
+    }
+
+    if (pesoValido && alturaValida) {
+        const imc = peso / (altura * altura)
+        tdImc.textContent = imc.toFixed(2) // limita a quantidade de casas decimais que aparecem na tela
+        tdImc.style.fontWeight = 'bold' // prática menos correta de add CSS
+    }
+
 }
