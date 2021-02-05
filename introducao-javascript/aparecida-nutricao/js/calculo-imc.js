@@ -52,9 +52,16 @@ for (let i = 0; i < pacientes.length; i++) {
     }
 
     if (pesoValido && alturaValida) {
-        const imc = peso / (altura * altura)
-        tdImc.textContent = imc.toFixed(2) // limita a quantidade de casas decimais que aparecem na tela
-        tdImc.style.fontWeight = 'bold' // prática menos correta de add CSS
+        let imc = calculaIMC(peso, altura)
+        tdImc.textContent = imc
+        // tdImc.style.fontWeight = 'bold' // prática menos correta de add CSS
     }
 
+}
+
+function calculaIMC(peso, altura) {
+    let imc = 0
+    imc = peso / (altura * altura)
+
+    return imc.toFixed(2) // limita a quantidade de casas decimais que aparecem na tela
 }
