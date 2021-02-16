@@ -11,6 +11,13 @@ botao.addEventListener('click', function (event) { // considerado boa prática s
     let paciente = obtemDadosDoForm(form)
     let pacienteTr = montaTr(paciente)        
     
+    let erros = validaPaciente(paciente)
+
+    if(erros.length > 0) {
+        exibeMsgDeErro(erros) 
+        return;
+    }
+
     // buscando a tabela do HTML
     let tabela = document.querySelector('#tabela-pacientes')    
     // adicionando na tabela o 'tr' contendo os valores coletados
@@ -18,7 +25,21 @@ botao.addEventListener('click', function (event) { // considerado boa prática s
 
     form.reset() // limpa os campos do formúlario após envio dos dados do novo paciente
 
+    let msgErro = document.querySelector('#msgs-erro')
+    msgErro.innerHTML = ''
+
 })
+
+function exibeMsgDeErro(erros) {
+    let ul = document.querySelector('#msgs-erro')
+    ul.innerHTML = '';
+
+    erros.forEach(erro => {
+        let li = document.createElement('li')
+        li.textContent = erro
+        ul.appendChild(li)
+    })
+}
 
 // coletando os valores específicos de cada campo/dado do novo paciente
 function obtemDadosDoForm(form) {
@@ -61,4 +82,21 @@ function montaTd(dado, classe) {
 
     return td
 
+}
+
+function validaPaciente(paciente){
+
+    let erros = []
+    // quando só tem uma condição pode colocar na mesma linha e não precisa das chaves
+    // if(paciente.nome.length == 0) erros.push('Preencha o nome do paciente!')
+    if(!validaPeso(paciente.peso)) erros.push('Valor do peso é inválido!')
+    // if(paciente.peso.length == 0) erros.push('Insira o peso do paciente!')
+    if(!validaAltura(paciente.altura)) erros.push('Valor da altura é inválido!')
+    // if(paciente.altura.length == 0) erros.push('Insira a altura do paciente!')  
+    // if(paciente.gordura.length == 0) erros.push('Insira o percentual de gordura do paciente!')
+    if(paciente.nome.length == 0 || paciente.peso.length == 0 || paciente.altura.length == 0 || paciente.gordura.length == 0) {
+        erros.push('Preencha o(s) campo(s) em branco!')
+    }
+
+    return erros
 }

@@ -25,10 +25,10 @@ for (let i = 0; i < pacientes.length; i++) {
 
     const tdImc = paciente.querySelector('.info-imc')
 
-    let pesoValido = true;
-    let alturaValida = true;
+    let pesoValido = validaPeso(peso);
+    let alturaValida = validaAltura(altura);
 
-    if (peso <= 0 || peso >= 1000) {
+    if (!pesoValido) {
         pesoValido = false;
         // tdPeso.style.backgroundColor = 'lightcoral'
         // tdPeso.style.fontWeight = 'bold'
@@ -40,7 +40,7 @@ for (let i = 0; i < pacientes.length; i++) {
 
     }
 
-    if (altura <= 0 || altura >= 3.00) {
+    if (!alturaValida) {
         alturaValida = false;
         // tdAltura.style.backgroundColor = 'lightcoral'
         // tdAltura.style.fontWeight = 'bold'
@@ -57,6 +57,22 @@ for (let i = 0; i < pacientes.length; i++) {
         // tdImc.style.fontWeight = 'bold' // prática menos correta de add CSS
     }
 
+}
+
+function validaPeso(peso) {
+    if (peso >= 0 && peso < 1000) {
+        return true
+    } else {
+        return false
+    }
+}
+
+function validaAltura(altura) {
+    if(altura >= 0 && altura <= 3.00) {
+        return true
+    } else {
+        return false
+    }
 }
 
 function calculaIMC(peso, altura) {
