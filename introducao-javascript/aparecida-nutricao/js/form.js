@@ -8,9 +8,7 @@ botao.addEventListener('click', function (event) { // considerado boa prática s
     let form = document.querySelector('#form-novo-paciente')
     
     // chamando as funções
-    let paciente = obtemDadosDoForm(form)
-    let pacienteTr = montaTr(paciente)        
-    
+    let paciente = obtemDadosDoForm(form)    
     let erros = validaPaciente(paciente)
 
     if(erros.length > 0) {
@@ -18,10 +16,8 @@ botao.addEventListener('click', function (event) { // considerado boa prática s
         return;
     }
 
-    // buscando a tabela do HTML
-    let tabela = document.querySelector('#tabela-pacientes')    
-    // adicionando na tabela o 'tr' contendo os valores coletados
-    tabela.appendChild(pacienteTr)
+    // chamando a função
+    addPacienteNaTabela(paciente)
 
     form.reset() // limpa os campos do formúlario após envio dos dados do novo paciente
 
@@ -29,6 +25,14 @@ botao.addEventListener('click', function (event) { // considerado boa prática s
     msgErro.innerHTML = ''
 
 })
+
+function addPacienteNaTabela(paciente) {
+    let pacienteTr = montaTr(paciente)
+    // buscando a tabela do HTML
+    let tabela = document.querySelector('#tabela-pacientes')
+    // adicionando na tabela o 'tr' contendo os valores coletados
+    tabela.appendChild(pacienteTr)
+}
 
 function exibeMsgDeErro(erros) {
     let ul = document.querySelector('#msgs-erro')

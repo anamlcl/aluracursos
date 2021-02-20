@@ -6,11 +6,11 @@ title.textContent = 'Aparecida Nutricionista'
 // const paciente = document.querySelector('#primeiro-paciente')
 
 // buscando dados de todos os pacientes da tabela
-const pacientes = document.querySelectorAll('.paciente')
+var pacientes = document.querySelectorAll('.paciente')
 
 for (let i = 0; i < pacientes.length; i++) {
 
-    const paciente = pacientes[i]
+    let paciente = pacientes[i]
 
     console.log(paciente)
 
