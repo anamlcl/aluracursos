@@ -1,0 +1,169 @@
+/* Observações:
+
+- 2 colunas? 50%. 3 colunas? 33%. 4 colunas? 25%. 5 colunas? 20%.
+- Largura, margens e paddings referem-se sempre a largura do elemento pai.
+- Usar em ou % para definir font-size dá no mesmo.
+- A medida em pode ser usada em qualquer propriedade. Seu cálculo é com relação ao tamanho do texto, mas seu uso é universal. E apesar do em não ser fluído por natureza, sua característica permite que uma alteração na fonte base do texto escale proporcionalmente outros elementos na página. 
+- Técnica simples mas importante em páginas responsivas é evitar que as imagens estourem os elementos que as contém, no caso de usarmos uma resolução baixa com uma imagem grande. Resolvemos isso com o max-width.
+- O inline-block simula uma linha de texto com seus elementos. Se não cabe mais um "caractere" na linha, a "palavra" escorrega para linha de baixo.*/
+
+header {
+  padding: 0.5em 0;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.logo,
+.secao {
+  padding: 0 1%;
+}
+
+img {
+  max-width: 100%;
+}
+
+.logo img {
+  width: 200px;
+}
+
+.barra-nav {
+  margin: 0.4em 0;
+}
+
+.logo,
+.busca,
+.barra-nav,
+.menu-principal {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.menu-principal li {
+  float: left;
+}
+
+.destaques {
+  margin-top: 1em;
+}
+
+.secao {
+  float: left;
+  width: 100%;
+}
+
+.mini {
+  float: left;
+  width: 50%;
+}
+
+/* A vantagem do em é poder mudar o font-size base e isso afetar outros elementos em cascata. Facilita bastante o aumento dos elementos de forma proporcional. */
+@media (min-width: 600px) {
+  html {
+    font-size: 1.125em;
+  }
+  /* grid flexível com porcentagens disparando colunas diferentes dependendo do tamanho da tela. */
+  .secao {
+    width: 50%;
+  }
+}
+
+@media (max-width: 600px) {
+  .barra-nav {
+    background: #f0f0f0;
+    padding: 1em;
+    margin: 0;
+
+    height: 100%;
+    width: 70%;
+    max-width: 320px;
+
+    /* o menu lateral aparece por cima do conteúdo */
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    /* o menu lateral fica "escondido" do lado do conteúdo até ser clicado;
+       colocar a mesma porcentagem do width, só que negativa */
+    left: -70%;
+
+    transition: left 0.3s ease-out;
+  }
+  .menu-ativo .barra-nav {
+    left: 0;
+  }
+
+  .menu-ativo:after {
+    content: "";
+    display: block;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .menu-principal li {
+    padding: 1em 0;
+    width: 100%;
+  }
+
+  .menu-aberto,
+  .menu-fechado {
+    background: none;
+    border: 0;
+    outline: 0;
+    -webkit-appearance: none;
+    font-size: 1.6em;
+    text-indent: -999em;
+  }
+
+  .menu-aberto {
+    height: 0;
+    width: 0.75em;
+    padding-top: 0.125em;
+    border-top: 0.375em double #FF0000;
+    border-bottom: 0.125em solid #FF0000;
+    vertical-align: middle;
+    margin: 0.5em;
+  }
+
+  .menu-fechado {
+    position: relative;
+    height: 1em;
+    width: 1em;
+  }
+
+  .menu-fechado:before {
+    content: "\00D7";
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-indent: 0;
+  }
+
+}
+
+/* Escondendo os botões de abrir e fechar o menu lateral para que apareçam apenas no mobile;
+   Antes tínhamos @media (max-width:600px) e agora queremos o inverso dela. 
+   A única forma de fazer isso é negando a media query com o '@media not all and...' */
+@media not all and (max-width: 600px) {
+  .menu-aberto,
+  .menu-fechado {
+    display: none;
+  }
+}
+
+@media (min-width: 1000px) {
+  html {
+    font-size: 1.25em;
+  }
+
+  .secao {
+    width: 33.333%;
+  }
+}
