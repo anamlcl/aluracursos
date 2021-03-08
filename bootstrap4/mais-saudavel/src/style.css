@@ -1,0 +1,46 @@
+body {
+    font-family: 'Comfortaa', cursive;
+}
+
+.img-carrossel-um {
+    height: 500px;
+    object-fit: cover;
+    object-position: 0 70%;
+    opacity: 0.7;
+}
+
+.img-carrossel-dois {
+    height: 500px;
+    object-fit: cover;
+    object-position: 0 50%;
+    opacity: 0.7;
+}
+
+.titulo-cor {
+    color: rgb(129, 194, 129)!important;
+} 
+
+.btn-cor {
+    background-color: rgb(129, 194, 129);
+    color: #fff;
+}
+
+.btn-cor:hover {
+    background-color: rgb(104, 170, 104);
+    color: #fff;
+}
+
+.borda-cor {
+    border-color: rgb(129, 194, 129)
+
+}
+
+.card-largura {
+    max-width: 18rem;
+}
+
+.card-img {
+    object-fit: cover;
+    height: 200px;
+}
+
